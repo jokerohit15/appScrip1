@@ -9,10 +9,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
-  // ignore: prefer_expression_function_bodies
-  Widget build(BuildContext context) {
-    return GetMaterialApp(
-      home: LoginScreen(),
-    );
-  }
+  Widget build(BuildContext context) => GetMaterialApp(
+        home: LoginScreen(),
+      );
 }
