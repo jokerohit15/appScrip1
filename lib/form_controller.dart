@@ -6,8 +6,8 @@ import 'package:get/get.dart';
 class FormController extends GetxController {
   var checkColor = Colors.black.obs;
   int c = 0, d = 0; //to check the update status of the validators
-  void updateColor(Color color) {
-    checkColor = color.obs;
+  void updateColor(Rx<Color> color) {
+    checkColor = color;
   }
 
   void checkEmail(String email) {
@@ -17,7 +17,7 @@ class FormController extends GetxController {
     } else if (EmailValidator.validate(email) == false) {
       print('Email Invalid');
     } else {
-      c = 1; //update
+      c = 1;//update
       update();
     }
   }
@@ -30,12 +30,12 @@ class FormController extends GetxController {
         !password.contains(RegExp(r'[A-Z]')) ||
         !password.contains(RegExp(r'[0-9]')) ||
         !password.contains(RegExp(r'[^<>()[\]\\.,;:\s@\"!]'))) {
-      updateColor(Colors.black);
+      updateColor(Colors.black.obs);
       print('Conditions not fulfilled');
       update();
     } else {
       d = 2; //update
-      updateColor(Colors.green);
+      updateColor(Colors.green.obs);
       update();
     }
   }

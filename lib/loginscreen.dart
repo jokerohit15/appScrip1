@@ -9,6 +9,7 @@ class LoginScreen extends StatelessWidget {
   TextEditingController em = TextEditingController(); //email controller
   TextEditingController pass = TextEditingController();
   Widget checkMarks() => Row(
+      key: const Key('Icon Row'),
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -85,6 +86,7 @@ class LoginScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
                       TextField(
+                        key: const Key('Email Field'),
                           controller: em,
                           keyboardType: TextInputType.emailAddress,
                           style: const TextStyle(color: Colors.black),
@@ -98,6 +100,7 @@ class LoginScreen extends StatelessWidget {
                         height: 8.0,
                       ),
                       TextField(
+                         key: const Key('Password Field'),
                           controller: pass,
                           obscureText: true,
                           textAlign: TextAlign.center,
@@ -118,6 +121,7 @@ class LoginScreen extends StatelessWidget {
                           color: Colors.black,
                           borderRadius: BorderRadius.circular(30.0),
                           child: MaterialButton(
+                              key: const Key('Login Button'),
                             onPressed: () {
                               _controller.login();
                             },
