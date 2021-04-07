@@ -10,11 +10,11 @@ class FormController extends GetxController {
     checkColor = color.obs;
   }
 
-  void checkEmail(String value) {
+  void checkEmail(String email) {
     //validates the email
-    if (value.isEmpty) {
+    if (email.isEmpty) {
       print('Email cannot be empty');
-    } else if (EmailValidator.validate(value) == false) {
+    } else if (EmailValidator.validate(email) == false) {
       print('Email Invalid');
     } else {
       c = 1; //update
@@ -22,14 +22,14 @@ class FormController extends GetxController {
     }
   }
 
-  void checkPassword(String value) {
+  void checkPassword(String password) {
     //validates the password
-    if (value.isEmpty) {
+    if (password.isEmpty) {
       print('Password cannot be empty');
-    } else if (value.length > 6 ||
-        !value.contains(RegExp(r'[A-Z]')) ||
-        !value.contains(RegExp(r'[0-9]')) ||
-        !value.contains(RegExp(r'[^<>()[\]\\.,;:\s@\"!]'))) {
+    } else if (password.length < 6 ||
+        !password.contains(RegExp(r'[A-Z]')) ||
+        !password.contains(RegExp(r'[0-9]')) ||
+        !password.contains(RegExp(r'[^<>()[\]\\.,;:\s@\"!]'))) {
       updateColor(Colors.black);
       print('Conditions not fulfilled');
       update();

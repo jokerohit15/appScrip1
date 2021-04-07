@@ -106,7 +106,7 @@ class LoginScreen extends StatelessWidget {
                             _controller.checkPassword(value);
                           },
                           decoration: kTextFieldDecoration.copyWith(
-                              hintText: 'Enter your password')),
+                              hintText: 'Enter your password'),),
                       checkMarks(),
                       const SizedBox(
                         height: 24.0,
